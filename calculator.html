@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meet Jain - Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Projects</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="table.html">Table Generator</a>
+      <a href="contact.html">Contact</a>
+      <a href="review.html">Review</a>
+    </nav>
+
+    <h2>Simple Interest Calculator</h2>
+    <p>Calculate simple interest quickly with this interactive calculator tool.</p>
+
+    <div class="tool-card">
+      <h3>Simple Interest Calculator</h3>
+      <div class="form-group">
+        <label>Principal Amount</label>
+        <input type="number" placeholder="Enter principal amount" id="si-p" onchange="calculateSI()" class="calculator-input">
+      </div>
+      <div class="form-group">
+        <label>Rate of Interest (%)</label>
+        <input type="number" placeholder="Enter interest rate" id="si-r" onchange="calculateSI()" class="calculator-input">
+      </div>
+      <div class="form-group">
+        <label>Time (years)</label>
+        <input type="number" placeholder="Enter time in years" id="si-t" onchange="calculateSI()" class="calculator-input">
+      </div>
+      <div id="si-result" class="result-display"></div>
+    </div>
+  </div>
+
+  <script>
+    // Simple Interest Calculator Function
+    function calculateSI() {
+      const p = parseFloat(document.getElementById('si-p').value);
+      const r = parseFloat(document.getElementById('si-r').value);
+      const t = parseFloat(document.getElementById('si-t').value);
+
+      if (isNaN(p) || isNaN(r) || isNaN(t)) {
+        document.getElementById('si-result').innerHTML = '<p class="error">Please enter valid numbers in all fields</p>';
+        return;
+      }
+
+      const si = (p * r * t) / 100;
+      const total = p + si;
+      
+      document.getElementById('si-result').innerHTML = `
+        <p><strong>Simple Interest:</strong> ₹${si.toFixed(2)}</p>
+        <p><strong>Total Amount:</strong> ₹${total.toFixed(2)}</p>
+      `;
+    }
+  </script>
+</body>
+</html>

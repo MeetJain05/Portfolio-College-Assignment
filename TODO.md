@@ -1,0 +1,3 @@
+- [x] Add :root and scoped CSS rules to styles.css
+- [x] Edit login.html: remove <style>, add link to styles.css, add class="auth-page" to body
+- [x] Edit signup.html: remove <style>, add link to styles.css, add class="auth-page" to body

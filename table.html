@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meet Jain - Table Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Projects</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="table.html">Table Generator</a>
+      <a href="contact.html">Contact</a>
+      <a href="review.html">Review</a>
+    </nav>
+
+    <h2>Multiplication Table Generator</h2>
+    <p>Generate multiplication tables for any number with this interactive tool.</p>
+
+    <div class="tool-card">
+      <h3>Multiplication Table Generator</h3>
+      <div class="form-group">
+        <label>Enter a Number</label>
+        <input type="number" placeholder="Enter any number" id="table-num" class="calculator-input">
+      </div>
+      <button onclick="generateTable()" class="calculator-btn">Generate Table</button>
+      <div id="table-result" class="result-display table-result"></div>
+    </div>
+  </div>
+
+  <script>
+    // Multiplication Table Generator Function
+    function generateTable() {
+      const num = parseFloat(document.getElementById('table-num').value);
+      
+      if (isNaN(num)) {
+        document.getElementById('table-result').innerHTML = '<p class="error">Please enter a valid number</p>';
+        return;
+      }
+
+      let tableHTML = '<div class="table-container">';
+      for (let i = 1; i <= 10; i++) {
+        tableHTML += `<p>${num} × ${i} = ${(num * i).toFixed(2)}</p>`;
+      }
+      tableHTML += '</div>';
+      
+      document.getElementById('table-result').innerHTML = tableHTML;
+    }
+  </script>
+</body>
+</html>

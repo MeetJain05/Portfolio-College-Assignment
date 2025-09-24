@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meet Jain - Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="skills.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="review.html">Review</a>
+    </nav>
+
+    <h1>Leave a Review</h1>
+
+    <form>
+      <!-- Text input -->
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your Name" required>
+      </div>
+
+      <!-- Email input -->
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="your.email@example.com" required>
+      </div>
+
+      <!-- Radio buttons -->
+      <div class="form-group">
+        <label>Rating:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="rating" value="5"> 5</label>
+          <label><input type="radio" name="rating" value="4"> 4</label>
+          <label><input type="radio" name="rating" value="3"> 3</label>
+          <label><input type="radio" name="rating" value="2"> 2</label>
+          <label><input type="radio" name="rating" value="1"> 1</label>
+        </div>
+      </div>
+
+      <!-- Checkbox -->
+      <div class="form-group">
+        <label>Interests:</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="interest" value="web"> Web Development</label>
+          <label><input type="checkbox" name="interest" value="design"> Design</label>
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div class="form-group">
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" rows="4" placeholder="Your feedback..." required></textarea>
+      </div>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+</body>
+</html>
